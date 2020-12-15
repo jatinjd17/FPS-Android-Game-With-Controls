@@ -1,0 +1,55 @@
+Converting script [1 / 6]	[\FirstPersonController.cs]
+	Fragments : 3
+		[ 0] : Line:   65	InputProperty touchCount          
+		[ 1] : Line:   68	Other mod.	[Touch]
+		[ 2] : Line:   68	InputMethod   GetTouch            	(i)
+
+Converting script [2 / 6]	[\Scripts\CheckpointController.cs]
+	Fragments : 1
+		[ 0] : Line:   26	InputMethod   GetKeyDown          	(KeyCode.L)
+
+Converting script [3 / 6]	[\Scripts\GameManager.cs]
+	Fragments : 4
+		[ 0] : Line:   23	Other mod.	[Cursor.lockState]
+		[ 1] : Line:   29	InputMethod   GetKeyDown          	(KeyCode.Escape)
+		[ 2] : Line:   55	Other mod.	[Cursor.lockState]
+		[ 3] : Line:   65	Other mod.	[Cursor.lockState]
+
+Converting script [4 / 6]	[\Scripts\PlayerController.cs]
+	Fragments : 13
+		[ 0] : Line:   70	InputMethod   GetAxis             	("Vertical")
+		[ 1] : Line:   71	InputMethod   GetAxis             	("Horizontal")
+		[ 2] : Line:   76	InputMethod   GetKey              	(KeyCode.LeftShift)
+		[ 3] : Line:  102	InputMethod   GetKeyDown          	(KeyCode.Space)
+		[ 4] : Line:  110	InputMethod   GetKeyDown          	(KeyCode.Space)
+		[ 5] : Line:  134	InputMethod   GetAxisRaw          	("Mouse X")
+		[ 6] : Line:  134	InputMethod   GetAxisRaw          	("Mouse Y")
+		[ 7] : Line:  153	InputMethod   GetMouseButtonDown  	(0)
+		[ 8] : Line:  175	InputMethod   GetMouseButton      	(0)
+		[ 9] : Line:  183	InputMethod   GetKeyDown          	(KeyCode.Tab)
+		[10] : Line:  188	InputMethod   GetMouseButtonDown  	(1)
+		[11] : Line:  193	InputMethod   GetMouseButton      	(1)
+		[12] : Line:  204	InputMethod   GetMouseButtonUp    	(1)
+
+Converting script [5 / 6]	[\Scripts\VictoryScreen.cs]
+	Fragments : 1
+		[ 0] : Line:   23	Other mod.	[Cursor.lockState]
+
+Converting script [6 / 6]	[\Udemy FPS Assets\Starfield Skybox\Demo\Script\LookCamera.cs]
+	Fragments : 4
+		[ 0] : Line:   23	InputMethod   GetMouseButton      	(1)
+		[ 1] : Line:   25	InputMethod   GetAxis             	("Mouse X")
+		[ 2] : Line:   26	InputMethod   GetAxis             	("Mouse Y")
+		[ 3] : Line:   31	InputMethod   GetKey              	(KeyCode.U)
+
+
+6 scripts modified!
+Overwriting actual scripts...
+	[0 / 6] from  [C:/Unity Game Resources/Unity Games/FPS Game working on Android/CF2-Data/Script-Backups/2020-12-16-00-32\Assets-After/\FirstPersonController.cs] to [C:/Unity Game Resources/Unity Games/FPS Game working on Android/Assets/\FirstPersonController.cs]
+	[1 / 6] from  [C:/Unity Game Resources/Unity Games/FPS Game working on Android/CF2-Data/Script-Backups/2020-12-16-00-32\Assets-After/\Scripts\CheckpointController.cs] to [C:/Unity Game Resources/Unity Games/FPS Game working on Android/Assets/\Scripts\CheckpointController.cs]
+	[2 / 6] from  [C:/Unity Game Resources/Unity Games/FPS Game working on Android/CF2-Data/Script-Backups/2020-12-16-00-32\Assets-After/\Scripts\GameManager.cs] to [C:/Unity Game Resources/Unity Games/FPS Game working on Android/Assets/\Scripts\GameManager.cs]
+	[3 / 6] from  [C:/Unity Game Resources/Unity Games/FPS Game working on Android/CF2-Data/Script-Backups/2020-12-16-00-32\Assets-After/\Scripts\PlayerController.cs] to [C:/Unity Game Resources/Unity Games/FPS Game working on Android/Assets/\Scripts\PlayerController.cs]
+	[4 / 6] from  [C:/Unity Game Resources/Unity Games/FPS Game working on Android/CF2-Data/Script-Backups/2020-12-16-00-32\Assets-After/\Scripts\VictoryScreen.cs] to [C:/Unity Game Resources/Unity Games/FPS Game working on Android/Assets/\Scripts\VictoryScreen.cs]
+	[5 / 6] from  [C:/Unity Game Resources/Unity Games/FPS Game working on Android/CF2-Data/Script-Backups/2020-12-16-00-32\Assets-After/\Udemy FPS Assets\Starfield Skybox\Demo\Script\LookCamera.cs] to [C:/Unity Game Resources/Unity Games/FPS Game working on Android/Assets/\Udemy FPS Assets\Starfield Skybox\Demo\Script\LookCamera.cs]
+
+Overwriting COMPLETED!

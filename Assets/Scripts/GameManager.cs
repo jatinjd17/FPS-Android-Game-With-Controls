@@ -8,6 +8,7 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
 
     public float waitAfterDying = 2f;
+    public GameObject CF2Canvas;
 
     [HideInInspector]
     public bool levelEnding;
@@ -20,15 +21,17 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Cursor.lockState = CursorLockMode.Locked;
+        ControlFreak2.CFCursor.lockState = CursorLockMode.Locked;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        if(ControlFreak2.CF2Input.GetKeyDown(KeyCode.Escape))
         {
             PauseUnpause();
+            CF2Canvas.SetActive(false);
+            
         }
     }
 
@@ -52,7 +55,7 @@ public class GameManager : MonoBehaviour
         {
             UIController.instance.pauseScreen.SetActive(false);
 
-            Cursor.lockState = CursorLockMode.Locked;
+            ControlFreak2.CFCursor.lockState = CursorLockMode.Locked;
 
             Time.timeScale = 1f;
 
@@ -62,7 +65,7 @@ public class GameManager : MonoBehaviour
         {
             UIController.instance.pauseScreen.SetActive(true);
 
-            Cursor.lockState = CursorLockMode.None;
+            ControlFreak2.CFCursor.lockState = CursorLockMode.None;
 
             Time.timeScale = 0f;
 
