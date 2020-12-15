@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+
+    private PlayerInput playerInput;
+
+
     public static GameManager instance;
 
     public float waitAfterDying = 2f;
@@ -15,7 +19,24 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        playerInput = new PlayerInput();
     }
+
+
+
+
+
+    private void OnEnable()
+    {
+        playerInput.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerInput.Disable();
+    }
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -26,7 +47,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape))
+        //if(Input.GetKeyDown(KeyCode.Escape))
+        if(playerInput.PlayerMain.Escape.triggered)
         {
             PauseUnpause();
         }

@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+
+    private PlayerInput playerInput;
+
     public static PlayerController instance;
 
     public float moveSpeed, gravityModifier, jumpPower, runSpeed = 12f;
@@ -45,7 +48,21 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        playerInput = new PlayerInput();
     }
+
+
+
+    private void OnEnable()
+    {
+        playerInput.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerInput.Disable();
+    }
+
 
     // Start is called before the first frame update
     void Start()
@@ -67,13 +84,21 @@ public class PlayerController : MonoBehaviour
             //store y velocity
             float yStore = moveInput.y;
 
-            Vector3 vertMove = transform.forward * Input.GetAxis("Vertical");
-            Vector3 horiMove = transform.right * Input.GetAxis("Horizontal");
+
+
+            Vector2 movementInput = playerInput.PlayerMain.Move.ReadValue<Vector2>();
+
+
+
+            Vector3 vertMove = transform.forward * movementInput.y;     //Input.GetAxis("Vertical");
+            Vector3 horiMove = transform.right * movementInput.x;       //Input.GetAxis("Horizontal");
 
             moveInput = horiMove + vertMove;
             moveInput.Normalize();
 
-            if (Input.GetKey(KeyCode.LeftShift))
+            //if (Input.GetKey(KeyCode.LeftShift))
+
+            if(playerInput.PlayerMain.Sprint.triggered)
             {
                 moveInput = moveInput * runSpeed;
             }
@@ -99,7 +124,9 @@ public class PlayerController : MonoBehaviour
             }
 
             //Handle Jumping
-            if (Input.GetKeyDown(KeyCode.Space) && canJump)
+            //if (Input.GetKeyDown(KeyCode.Space) && canJump)
+
+            if(playerInput.PlayerMain.Jump.triggered)
             {
                 moveInput.y = jumpPower;
 
@@ -107,7 +134,8 @@ public class PlayerController : MonoBehaviour
 
                 AudioManager.instance.PlaySFX(8);
             }
-            else if (canDoubleJump && Input.GetKeyDown(KeyCode.Space))
+            //else if (canDoubleJump && Input.GetKeyDown(KeyCode.Space))
+            else if (canDoubleJump && playerInput.PlayerMain.Jump.triggered)
             {
                 moveInput.y = jumpPower;
 
@@ -131,7 +159,9 @@ public class PlayerController : MonoBehaviour
 
 
             //control camera rotation
-            Vector2 mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y")) * mouseSensitivity;
+            //Vector2 mouseInput = new Vector2(Input.GetAxisRaw("Mouse X"), Input.GetAxisRaw("Mouse Y")) * mouseSensitivity;
+
+            Vector2 mouseInput = playerInput.PlayerMain.Look.ReadValue<Vector2>();
 
             if (invertX)
             {
@@ -142,15 +172,18 @@ public class PlayerController : MonoBehaviour
                 mouseInput.y = -mouseInput.y;
             }
 
-            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + mouseInput.x, transform.rotation.eulerAngles.z);
+            transform.rotation = Quaternion.Euler(transform.rotation.eulerAngles.x, transform.rotation.eulerAngles.y + mouseInput.x * 10, transform.rotation.eulerAngles.z);
 
-            camTrans.rotation = Quaternion.Euler(camTrans.rotation.eulerAngles + new Vector3(-mouseInput.y, 0f, 0f));
+            camTrans.rotation = Quaternion.Euler(camTrans.rotation.eulerAngles + new Vector3(-mouseInput.y * 5, 0f, 0f));
 
             muzzleFlash.SetActive(false);
 
             //Handle Shooting
             //single shots
-            if (Input.GetMouseButtonDown(0) && activeGun.fireCounter <= 0)
+
+
+            //if (Input.GetMouseButtonDown(0) && activeGun.fireCounter <= 0)
+            if(playerInput.PlayerMain.Fire.triggered && activeGun.fireCounter <=0)
             {
                 RaycastHit hit;
                 if (Physics.Raycast(camTrans.position, camTrans.forward, out hit, 50f))
@@ -172,7 +205,8 @@ public class PlayerController : MonoBehaviour
             }
 
             //repeating shots
-            if (Input.GetMouseButton(0) && activeGun.canAutoFire)
+            //if (Input.GetMouseButton(0) && activeGun.canAutoFire)
+            if(playerInput.PlayerMain.Fire.triggered && activeGun.canAutoFire)
             {
                 if (activeGun.fireCounter <= 0)
                 {
@@ -180,17 +214,20 @@ public class PlayerController : MonoBehaviour
                 }
             }
 
-            if (Input.GetKeyDown(KeyCode.Tab))
+            //if (Input.GetKeyDown(KeyCode.Tab))
+            if(playerInput.PlayerMain.WeaponChange.triggered)
             {
                 SwitchGun();
             }
 
-            if (Input.GetMouseButtonDown(1))
+            //if (Input.GetMouseButtonDown(1))
+            if (playerInput.PlayerMain.Zoom.triggered)
             {
                 CameraController.instance.ZoomIn(activeGun.zoomAmount);
             }
 
-            if (Input.GetMouseButton(1))
+            //if (Input.GetMouseButton(1))
+            if (playerInput.PlayerMain.Zoom.triggered)
             {
                 gunHolder.position = Vector3.MoveTowards(gunHolder.position, adsPoint.position, adsSpeed * Time.deltaTime);
             }
@@ -201,7 +238,8 @@ public class PlayerController : MonoBehaviour
 
 
 
-            if (Input.GetMouseButtonUp(1))
+            //if (Input.GetMouseButtonUp(1))
+            if (playerInput.PlayerMain.Zoom.triggered)
             {
                 CameraController.instance.ZoomOut();
             }

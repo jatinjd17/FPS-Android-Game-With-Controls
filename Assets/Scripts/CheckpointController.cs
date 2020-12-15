@@ -23,10 +23,10 @@ public class CheckpointController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.L))
+        /*if(Input.GetKeyDown(KeyCode.L))
         {
             PlayerPrefs.SetString(SceneManager.GetActiveScene().name + "_cp", "");
-        }
+        } */
     }
 
     private void OnTriggerEnter(Collider other)
