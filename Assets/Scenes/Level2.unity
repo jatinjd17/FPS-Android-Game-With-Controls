@@ -97,7 +97,8 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
-  m_LightingDataAsset: {fileID: 0}
+  m_LightingDataAsset: {fileID: 112000000, guid: e621ec38b2aa3b343bee3c064498e5f6,
+    type: 2}
   m_LightingSettings: {fileID: 754858758}
 --- !u!196 &4
 NavMeshSettings:
@@ -2793,6 +2794,16 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6633643912984500778, guid: 16882e6a3cc77d44c888221a5387ccc4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 44.879883
+      objectReference: {fileID: 0}
+    - target: {fileID: 6633643912984500778, guid: 16882e6a3cc77d44c888221a5387ccc4,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -134.64001
+      objectReference: {fileID: 0}
     - target: {fileID: 6633643912984500779, guid: 16882e6a3cc77d44c888221a5387ccc4,
         type: 3}
       propertyPath: m_Layer
@@ -2883,6 +2894,11 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 6633643914360011658, guid: 16882e6a3cc77d44c888221a5387ccc4,
+        type: 3}
+      propertyPath: shareTouch
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6633643914360011668, guid: 16882e6a3cc77d44c888221a5387ccc4,
         type: 3}
       propertyPath: m_Layer
@@ -2967,6 +2983,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6633643914649643372, guid: 16882e6a3cc77d44c888221a5387ccc4,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6633643914743569866, guid: 16882e6a3cc77d44c888221a5387ccc4,
         type: 3}
@@ -3239,17 +3260,17 @@ LightingSettings:
   m_PrefabAsset: {fileID: 0}
   m_Name: Settings.lighting
   serializedVersion: 2
-  m_GIWorkflowMode: 0
+  m_GIWorkflowMode: 1
   m_EnableBakedLightmaps: 1
   m_EnableRealtimeLightmaps: 0
   m_RealtimeEnvironmentLighting: 1
   m_BounceScale: 1
   m_AlbedoBoost: 1
   m_IndirectOutputScale: 1
-  m_UsingShadowmask: 1
+  m_UsingShadowmask: 0
   m_BakeBackend: 1
-  m_LightmapMaxSize: 1024
-  m_BakeResolution: 40
+  m_LightmapMaxSize: 256
+  m_BakeResolution: 20
   m_Padding: 2
   m_TextureCompression: 1
   m_AO: 0
@@ -3257,7 +3278,7 @@ LightingSettings:
   m_CompAOExponent: 1
   m_CompAOExponentDirect: 0
   m_ExtractAO: 0
-  m_MixedBakeMode: 2
+  m_MixedBakeMode: 1
   m_LightmapsBakeMode: 1
   m_FilterMode: 1
   m_LightmapParameters: {fileID: 0}
@@ -9263,7 +9284,7 @@ Light:
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 0
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -10129,6 +10150,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4194014989082290681, guid: 48927ce520c8eea49b29a38829927a88,
+        type: 3}
+      propertyPath: far clip plane
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 4194014989082290683, guid: 48927ce520c8eea49b29a38829927a88,
         type: 3}
       propertyPath: m_Name
@@ -10588,7 +10614,7 @@ PrefabInstance:
     - target: {fileID: 7014478449070596216, guid: 5d9878aa60d0663449f779fe4ae6fe80,
         type: 3}
       propertyPath: nextLevel
-      value: GameComplete
+      value: SimpleNaturePack_Demo
       objectReference: {fileID: 0}
     - target: {fileID: 7014478449070596219, guid: 5d9878aa60d0663449f779fe4ae6fe80,
         type: 3}

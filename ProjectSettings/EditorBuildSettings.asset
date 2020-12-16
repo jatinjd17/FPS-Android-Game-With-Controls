@@ -9,15 +9,24 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: edd26291e16eb494d8913d07de8fba00
   - enabled: 1
-    path: Assets/Scenes/test.unity
-    guid: ceab744d3e3f3fb4db0ef1990a730be5
-  - enabled: 1
-    path: Assets/Scenes/GameComplete.unity
-    guid: 0077c81d133d6b34b85f31214263a296
-  - enabled: 1
     path: Assets/Scenes/Level1.unity
     guid: 11ce77697d2bbb94fbd9fedccf42d847
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 27ea927980a106d4d9582345fe7a07c1
+  - enabled: 1
+    path: Assets/Scenes/SimpleNaturePack_Demo.unity
+    guid: 5e7af4bd95ac53a4cb784a9eedf8f6f9
+  - enabled: 1
+    path: Assets/Scenes/GameComplete.unity
+    guid: 0077c81d133d6b34b85f31214263a296
+  - enabled: 0
+    path: Assets/Scenes/nextnewscene.unity
+    guid: c4f12c8c4e85eb04b9b9d15dfa1f98f6
+  - enabled: 0
+    path: Assets/Scenes/anotherscene.unity
+    guid: d969bc195a4433f439262b5ebf0d84d2
+  - enabled: 0
+    path: Assets/Scenes/test.unity
+    guid: ceab744d3e3f3fb4db0ef1990a730be5
   m_configObjects: {}
